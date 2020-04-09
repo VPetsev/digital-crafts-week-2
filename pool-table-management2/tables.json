@@ -1,0 +1,86 @@
+[
+    {
+        "table_number": 1,
+        "occupied": "Occupied",
+        "start_time": "18:59:43",
+        "end_time": "19:03:32",
+        "num_minutes_played": "0:03:49"
+    },
+    {
+        "table_number": 2,
+        "occupied": "Occupied",
+        "start_time": "18:59:45",
+        "end_time": null,
+        "num_minutes_played": null
+    },
+    {
+        "table_number": 3,
+        "occupied": "Occupied",
+        "start_time": "18:59:46",
+        "end_time": null,
+        "num_minutes_played": null
+    },
+    {
+        "table_number": 4,
+        "occupied": "Occupied",
+        "start_time": "18:59:47",
+        "end_time": null,
+        "num_minutes_played": null
+    },
+    {
+        "table_number": 5,
+        "occupied": "Occupied",
+        "start_time": "19:09:21",
+        "end_time": "19:33:08",
+        "num_minutes_played": "0:23:47"
+    },
+    {
+        "table_number": 6,
+        "occupied": "Not Occupied",
+        "start_time": null,
+        "end_time": null,
+        "num_minutes_played": null
+    },
+    {
+        "table_number": 7,
+        "occupied": "Occupied",
+        "start_time": "19:08:03",
+        "end_time": "19:32:35",
+        "num_minutes_played": "0:24:32"
+    },
+    {
+        "table_number": 8,
+        "occupied": "Not Occupied",
+        "start_time": null,
+        "end_time": null,
+        "num_minutes_played": null
+    },
+    {
+        "table_number": 9,
+        "occupied": "Occupied",
+        "start_time": "19:33:42",
+        "end_time": null,
+        "num_minutes_played": null
+    },
+    {
+        "table_number": 10,
+        "occupied": "Occupied",
+        "start_time": "19:22:19",
+        "end_time": null,
+        "num_minutes_played": null
+    },
+    {
+        "table_number": 11,
+        "occupied": "Occupied",
+        "start_time": "19:22:38",
+        "end_time": "19:32:24",
+        "num_minutes_played": "0:09:46"
+    },
+    {
+        "table_number": 12,
+        "occupied": "Occupied",
+        "start_time": "19:06:26",
+        "end_time": "19:31:21",
+        "num_minutes_played": "0:24:55"
+    }
+]
