@@ -1,0 +1,86 @@
+[
+    {
+        "table_number": 1,
+        "is_occupied": "Not Occupied",
+        "start_time": null,
+        "end_time": null,
+        "total_minutes_played_today": null
+    },
+    {
+        "table_number": 2,
+        "is_occupied": "Not Occupied",
+        "start_time": null,
+        "end_time": null,
+        "total_minutes_played_today": null
+    },
+    {
+        "table_number": 3,
+        "is_occupied": "Not Occupied",
+        "start_time": null,
+        "end_time": null,
+        "total_minutes_played_today": null
+    },
+    {
+        "table_number": 4,
+        "is_occupied": "Not Occupied",
+        "start_time": null,
+        "end_time": null,
+        "total_minutes_played_today": null
+    },
+    {
+        "table_number": 5,
+        "is_occupied": "Not Occupied",
+        "start_time": null,
+        "end_time": null,
+        "total_minutes_played_today": null
+    },
+    {
+        "table_number": 6,
+        "is_occupied": "Not Occupied",
+        "start_time": null,
+        "end_time": null,
+        "total_minutes_played_today": null
+    },
+    {
+        "table_number": 7,
+        "is_occupied": "Not Occupied",
+        "start_time": null,
+        "end_time": null,
+        "total_minutes_played_today": null
+    },
+    {
+        "table_number": 8,
+        "is_occupied": "Not Occupied",
+        "start_time": null,
+        "end_time": null,
+        "total_minutes_played_today": null
+    },
+    {
+        "table_number": 9,
+        "is_occupied": "Not Occupied",
+        "start_time": null,
+        "end_time": null,
+        "total_minutes_played_today": null
+    },
+    {
+        "table_number": 10,
+        "is_occupied": "Not Occupied",
+        "start_time": null,
+        "end_time": null,
+        "total_minutes_played_today": null
+    },
+    {
+        "table_number": 11,
+        "is_occupied": "Not Occupied",
+        "start_time": null,
+        "end_time": null,
+        "total_minutes_played_today": null
+    },
+    {
+        "table_number": 12,
+        "is_occupied": "Not Occupied",
+        "start_time": "15:41:10",
+        "end_time": "15:41:15",
+        "total_minutes_played_today": null
+    }
+]

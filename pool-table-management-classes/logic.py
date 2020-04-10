@@ -1,63 +1,48 @@
 import os
 import json
 import view
-from datetime import date, datetime
-
-# file_path = 'tables.json'
-
-# is_empty = is_file_empty(file_path)
-
-# if is_empty:
-#     print("file is empty")
-#     table_maker()
-# else:
-#     with open('tables.json', 'r') as file:
-#         saved_tables = json.load(file)
-
-#     for i in range(0, len(saved_tables)):
-# table_list.append(saved_tables[i])
+from datetime import date, datetime, timedelta
 
 
 class Table:
     def __init__(self, table_number):
         self.table_number = table_number
         self.is_occupied = "Not Occupied"
-        self.start_time = ""
-        self.end_time = ""
-        self.total_minutes_played_today = 0
+        self.start_time = None
+        self.end_time = None
+        self.total_minutes_played_today = 0.0
 
-# which number to mark as occupied?
-
-    def mark_table_as_occupied(self, table):
-        if view.pool_hall_tables[table].is_occupied == "Not Occupied":
-            view.pool_hall_tables[table].is_occupied = "Occupied"
+    def open_table(self):
+        if self.is_occupied == "Not Occupied":
+            self.is_occupied = "Occupied"
+            print(self.is_occupied)
+            print(self.table_number)
+            self.start_time = datetime.now()
         else:
             print("no match")
-            
-    def time_adder(self, table):
-        now = datetime.now()
-        current_time = now.strftime("%H:%M:%S")
-        if view.pool_hall_tables[table].start_time == "":
-            view.pool_hall_tables[table].start_time = current_time
-            print('if fired')
-        elif (view.pool_hall_tables[table].start_time != "" and 
-              view.pool_hall_tables[table].end_time == ""):
-            view.pool_hall_tables[table].end_time = current_time
-            time_started = int(view.pool_hall_tables[table].start_time)
-            time_ended = int(view.pool_hall_tables[table].end_time) 
-            time_played = time_ended - time_started
-            view.pool_hall_tables[table].total_minutes_played_today += time_played
-            # reset table here or in main?
-            print('elif fired')
-        else:
-            print("unknown error")
-        
+    
+    def close_table(self):
+        if self.is_occupied == "Occupied":
+            self.is_occupied = "Not Occupied"
+            self.end_time = datetime.now()
+            self.total_minutes_played_today += self.min_played() 
 
-    def mark_table_as_unoccupied(self, table):
-        if (view.pool_hall_tables[table].is_occupied == "Occupied"):
-            view.pool_hall_tables[table].is_occupied = "Not Occupied"
-        else:
-            print("else fired")
+    def min_played(self):
+        total_time = (self.end_time - self.start_time)
+        self.total_minutes_played_today = total_time
+
+    def format_datetime(self, format):
+        if type(format) == datetime:
+            return format.strftime("%H:%M:%S")
+
+    def toDict(self):
+        return {
+            "table_number": self.table_number,
+            "is_occupied": "Not Occupied",
+            "start_time": self.format_datetime(self.start_time),
+            "end_time": self.format_datetime(self.end_time),
+            "total_minutes_played_today": self.format_datetime(self.total_minutes_played_today)
+        }
 
 class PoolHall:
 
@@ -72,25 +57,9 @@ class PoolHall:
                 Occupied: {tbl.is_occupied}
                 Start time: {tbl.start_time}
                 End time: {tbl.end_time}
-                Minutes Played: {tbl.number_of_minutes_played}
+                Minutes Played: {tbl.total_minutes_played_today}
             ''')
-
-    def reset_table(self, table_to_reset):
-        datetime_time_played = datetime.strptime(min_played)
-        table_reset["num_minutes_played"] += datetime_time_played
 
     def end_of_day_date_adder(self):
         today = date.today()
         return today.strftime("%B %d, %Y")
-
-# def end_of_day_date_adder():
-#     today = date.today()
-#     return today.strftime("%B %d, %Y")
-
-# file_path = 'tables.json'
-
-# def is_file_empty(file_path):
-#     return os.path.exists(file_path) and os.stat(file_path).st_size == 0
-
-
-
