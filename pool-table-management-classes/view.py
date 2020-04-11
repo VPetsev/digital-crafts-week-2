@@ -15,35 +15,31 @@ def show_menu():
             5. Revenue per table
             q. Press q to quit""")
 
+def table_maker():
+    for i in range(1, 13):
+        table = logic.Table(i)
+        pool_hall_tables.append(table.toDict())
+
 try:
     with open('tables.json', 'r') as file:
         saved_tables = json.load(file)
         for i in range(0, len(saved_tables)):
-            print(saved_tables[i].items())
             pool_hall_tables.append(saved_tables[i])
-            print(pool_hall_tables)
-        print("Tables successfully loaded! (Hopefully)")
+        print("Tables successfully loaded!")
 except FileNotFoundError:
     with open('tables.json', 'w') as file:
-        for i in range(1, 13):
-            table = logic.Table(i)
-            pool_hall_tables.append(table)
+        table_maker()
         print("Tables successfully loaded!")
 except json.decoder.JSONDecodeError:
     with open('tables.json', 'w') as file:
-        for i in range(1, 13):
-            table = logic.Table(i)
-            pool_hall_tables.append(table)
+        table_maker()
         print("Tables successfully loaded!")
 except:
     print("Unknown error occured! Sorry!")
 
-def save_to_json(pool_hall_tables):
-    my_saved_array = []
-    for i in range(0, len(pool_hall_tables)):
-        table = pool_hall_tables[i]
-        my_saved_array.append(table.toDict())
+print(len(pool_hall_tables)) # len of list of dictionaries
 
+def save_to_json(pool_hall_tables):
     with open('tables.json', 'w') as file:
-        json.dump(my_saved_array, file, indent=4)
+        json.dump(pool_hall_tables, file, indent=4)
 
