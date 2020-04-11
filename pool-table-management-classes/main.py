@@ -8,7 +8,7 @@ running = True
 
 while running:
     view.show_menu()
-    choice = input()
+    choice = input("Input: ")
     if choice == '1':
         user_table_num = int(input("Choose a table to mark occupied: "))
         for index in range(0, len(view.pool_hall_tables)):
@@ -29,8 +29,6 @@ while running:
             "Please choose a valid table"
     elif choice == '3':
         view.my_poolhall.view_tables_in_hall()
-    elif choice == '4':
-        pass
     if choice == 'q':
         break
 

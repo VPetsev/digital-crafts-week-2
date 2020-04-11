@@ -11,8 +11,6 @@ def show_menu():
             1. Mark a table as occupied
             2. Mark a table as unoccupied
             3. See all active tables
-            4. Total revenue
-            5. Revenue per table
             q. Press q to quit""")
 
 def table_maker():
@@ -25,15 +23,15 @@ try:
         saved_tables = json.load(file)
         for i in range(0, len(saved_tables)):
             pool_hall_tables.append(saved_tables[i])
-        print("Tables successfully loaded!")
+        print("Tables successfully loaded from file!")
 except FileNotFoundError:
     with open('tables.json', 'w') as file:
         table_maker()
-        print("Tables successfully loaded!")
+        print("No current file for date, tables successfully created!")
 except json.decoder.JSONDecodeError:
     with open('tables.json', 'w') as file:
         table_maker()
-        print("Tables successfully loaded!")
+        print("Data file corrupted, new tables successfully loaded!")
 except:
     print("Unknown error occured! Sorry!")
 
