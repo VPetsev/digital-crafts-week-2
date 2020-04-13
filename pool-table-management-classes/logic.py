@@ -11,13 +11,14 @@ class Table:
         self.start_time = None
         self.end_time = None
         self.total_minutes_played_today = 0.0
+        self.revenue_from_today = 0.0
 
     def open_table(self):
         if self.is_occupied == "Not Occupied":
             self.is_occupied = "Occupied"
             chosen_table = view.pool_hall_tables[self.table_number - 1]
             chosen_table['is_occupied'] = self.is_occupied
-            chosen_table["start_time"] = self.format_datetime(datetime.now())
+            chosen_table["start_time"] = self.format_datetime_to_str(datetime.now())
         else:
             print("no match")
     
@@ -25,7 +26,7 @@ class Table:
         chosen_table = view.pool_hall_tables[self.table_number - 1]
         if chosen_table["is_occupied"] == "Occupied":
             chosen_table['is_occupied'] = 'Not Occupied'
-            chosen_table["end_time"] = self.format_datetime(datetime.now())
+            chosen_table["end_time"] = self.format_datetime_to_str(datetime.now())
             self.min_played()
         else:
             print('no match')
@@ -42,7 +43,8 @@ class Table:
         chosen_table['start_time'] = None
         chosen_table["end_time"] = None
 
-    def format_datetime(self, input_value):
+
+    def format_datetime_to_str(self, input_value):
         if type(input_value) == datetime or type(input_value) == timedelta:
             my_str = input_value.strftime("%H:%M:%S")
             return(my_str)
@@ -58,8 +60,6 @@ class Table:
             "total_minutes_played_today": self.total_minutes_played_today
         }
 
-# So we need to convert the timedelta saves for total minutes played, to a basic data type that can be stored to json files
-# currently the type is of timedelta. If i change it to string format, could I still do += for the total minutes counter?
 
 class PoolHall:
 
@@ -74,7 +74,7 @@ class PoolHall:
                 Occupied: {tbl["is_occupied"]}
                 Start time: {tbl["start_time"]}
                 End time: {tbl["end_time"]}
-                Minutes Played: {tbl["total_minutes_played_today"]}
+                Total Time Played: {tbl["total_minutes_played_today"]}
             ''')
 
     def end_of_day_date_adder(self):

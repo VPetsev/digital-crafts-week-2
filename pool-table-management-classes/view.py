@@ -10,7 +10,7 @@ def show_menu():
             Menu options (1/2/3/4/5/q):
             1. Mark a table as occupied
             2. Mark a table as unoccupied
-            3. See all active tables
+            3. See all tables
             q. Press q to quit""")
 
 def table_maker():

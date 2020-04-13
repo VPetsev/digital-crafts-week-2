@@ -8,7 +8,7 @@ running = True
 
 while running:
     view.show_menu()
-    choice = input("Input: ")
+    choice = str(input("Input: "))
     if choice == '1':
         user_table_num = int(input("Choose a table to mark occupied: "))
         for index in range(0, len(view.pool_hall_tables)):
